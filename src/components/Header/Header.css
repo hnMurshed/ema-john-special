@@ -1,0 +1,23 @@
+.nav-container {
+    background-color: #1C2B35;
+    position:sticky;
+    top: 0;
+}
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+/* .container {
+    width: 85%;
+    margin: auto;
+} */
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+nav a:hover {
+    color: #ff9900;
+}
