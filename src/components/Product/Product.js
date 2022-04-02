@@ -4,6 +4,7 @@ import './Product.css';
 const Product = (props) => {
     const {handleAddToCard, product} = props
     const { img, name, price, ratings, seller } = product;
+
     return (
         <div className='product relative'>
             <div className="product-info">
