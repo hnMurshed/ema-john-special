@@ -2,7 +2,7 @@ import React from 'react';
 import { clearShoppingCard } from '../../utilities/fakedb';
 import {TrashIcon, ArrowRightIcon} from '@heroicons/react/solid';
 
-const Card = ({cards}) => {
+const Card = ({cards, clearCard}) => {
     let quantity = 0;
     let totalPrice = 0;
     let shipping = 0;
@@ -18,6 +18,7 @@ const Card = ({cards}) => {
 
     const removeFromStore = () => {
         clearShoppingCard();
+        clearCard();
     }
     return (
         <div className="flex flex-col gap-3 mt-[50px]">
