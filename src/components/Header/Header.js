@@ -7,9 +7,9 @@ const Header = () => {
     return (
         <div className="nav-container flex justify-center z-10">
             <nav className="container">
-                <a href="/logo">
+                <Link to="/home">
                     <img src={logo} alt="" />
-                </a>
+                </Link>
                 <div>
                     <Link to='/home'>Home</Link>
                     <Link to='/order'>Order</Link>

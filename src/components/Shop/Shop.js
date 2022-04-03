@@ -1,4 +1,6 @@
+import { ArrowRightIcon } from '@heroicons/react/solid';
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import useCard from '../../hook/useCard';
 import useProducts from '../../hook/useProducts';
 import { addToDb, getStoredCard } from '../../utilities/fakedb';
@@ -48,6 +50,8 @@ const Shop = () => {
         setCard([]);
     }
     
+    const navigate = useNavigate();
+
     return (
         <div className="flex gap-5 container mx-auto products-container">
             <div className="products basis-3/5 sm:basis-3/4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -65,7 +69,12 @@ const Shop = () => {
                     <Card
                         clearCard={clearCard}
                         cards={cards}
-                    ></Card>
+                    >
+                        <button onClick={ () => navigate('/order') } className='flex justify-center items-center gap-2 w-full bg-[#FF9900] py-3 rounded-lg hover:bg-orange-600 hover:text-white duration-300'>
+                            <span>Review Order</span>
+                            <ArrowRightIcon className='w-5 h-5'></ArrowRightIcon>
+                        </button>
+                    </Card>
                 </div>
             </div>
         </div>

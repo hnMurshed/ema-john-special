@@ -4,7 +4,7 @@ import { TrashIcon } from '@heroicons/react/solid';
 import { removeItemFromStore } from '../../utilities/fakedb';
 
 const AddedProduct = ({ addedProduct, removeFromCard }) => {
-    const { img, name, price, shipping, id } = addedProduct;
+    const { img, name, price, shipping, id, quantity } = addedProduct;
 
     const trashIconEventHandler = () => {
         removeItemFromStore(id);
@@ -21,6 +21,9 @@ const AddedProduct = ({ addedProduct, removeFromCard }) => {
                     </p>
                     <p className='text-[15px]'>
                         Shipping Charge: <span className='text-[#FF9900]'>${shipping}</span>
+                    </p>
+                    <p className='text-[15px]'>
+                        Quantity: <span className='text-[#FF9900]'>{quantity}</span>
                     </p>
                 </div>
             </div>

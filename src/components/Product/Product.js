@@ -1,5 +1,5 @@
 import React from 'react';
-import { BeakerIcon, ShoppingCartIcon } from '@heroicons/react/solid';
+import { ShoppingCartIcon } from '@heroicons/react/solid';
 import './Product.css';
 
 const Product = (props) => {
