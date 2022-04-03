@@ -8,7 +8,7 @@ import Shop from './components/Shop/Shop';
 
 function App() {
   return (
-    <div>
+    <div className='font-[Lato]'>
       <Header></Header>
       <Routes>
         <Route path='/' element={<Shop></Shop>}></Route>
