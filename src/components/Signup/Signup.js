@@ -4,12 +4,15 @@ import { useAuthState, useCreateUserWithEmailAndPassword } from 'react-firebase-
 import auth from '../../firebase.init';
 import googleLogo from '../../images/google.png';
 import './Signup.css';
+import useSignInWithGoogle from '../../hook/useSignInWithGoogle';
 
 const Signup = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [newPassword, setNewPassword] = useState('');
     const [error, setError] = useState('');
+
+    const {signInWithGoogle} = useSignInWithGoogle();
 
     const navigate = useNavigate();
 
@@ -76,7 +79,7 @@ const Signup = () => {
                     <span className='px-5 pb-1 text-[17px] text-[#95A0A7]'>or</span>
                     <div className="line"></div>
                 </div>
-                <button className='google-btn w-full flex items-center justify-center gap-2'>
+                <button onClick={signInWithGoogle} className='google-btn w-full flex items-center justify-center gap-2'>
                     <img src={googleLogo} alt="" />
                     <span>Continue with Google</span>
                 </button>

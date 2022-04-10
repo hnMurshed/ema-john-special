@@ -2,12 +2,15 @@ import React, { useState } from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import useSignInWithGoogle from '../../hook/useSignInWithGoogle';
 import googleLogo from '../../images/google.png';
 import './Login.css';
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    const {signInWithGoogle} = useSignInWithGoogle();
 
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
@@ -54,7 +57,7 @@ const Login = () => {
                     <span className='px-5 pb-1 text-[17px] text-[#95A0A7]'>or</span>
                     <div className="line"></div>
                 </div>
-                <button className='google-btn w-full flex items-center justify-center gap-2'>
+                <button onClick={signInWithGoogle} className='google-btn w-full flex items-center justify-center gap-2'>
                     <img src={googleLogo} alt="" />
                     <span>Continue with Google</span>
                 </button>

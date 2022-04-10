@@ -18,17 +18,17 @@ const Header = () => {
                     <img src={logo} alt="" />
                 </Link>
                 <nav>
-                    <CustomLink to='/'>Home</CustomLink>
+                    <CustomLink to='/home'>Home</CustomLink>
                     <CustomLink to='/order'>Order</CustomLink>
                     <CustomLink to='/inventory'>Inventory</CustomLink>
                     <CustomLink to='/about'>About</CustomLink>
                 </nav>
-                <div>
+                <div className='flex items-center gap-2'>
                     {
                         user ? <>
-                            <span className='text-white mr-1'>{user.email}</span>
-                            <button onClick={() => signOut(auth)} className='bg-white py-2 px-4 border rounded-md'>Sign Out</button>
+                            <span className='text-white'>{user.email}</span>
                             <img className='w-[40px] rounded-full' src={user.photoURL} alt="" />
+                            <button onClick={() => signOut(auth)} className='bg-white py-2 px-4 border rounded-md'>Sign Out</button>
                         </> : <Link className='bg-white py-2 px-4 rounded-md' to='/login'>Login</Link>
                     }
                 </div>
