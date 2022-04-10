@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuthState, useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import googleLogo from '../../images/google.png';
@@ -32,7 +32,6 @@ const Signup = () => {
 
     if (user) {
         navigate('/home');
-        console.log(user);
     }
     if (firebaseError) {
         setError(firebaseError.message);

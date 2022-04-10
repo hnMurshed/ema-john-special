@@ -6,6 +6,7 @@ import Inventory from './components/Inventory/Inventory';
 import Login from './components/Login/Login';
 import NotFound from './components/NotFound/NotFound';
 import Order from './components/Order/Order';
+import RequiredAuth from './components/RequiredAuth/RequiredAuth';
 import Shop from './components/Shop/Shop';
 import Signup from './components/Signup/Signup';
 
@@ -17,7 +18,11 @@ function App() {
         <Route path='/' element={<Shop></Shop>}></Route>
         <Route path='home' element={<Shop></Shop>}></Route>
         <Route path='order' element={<Order></Order>}></Route>
-        <Route path='inventory' element={<Inventory></Inventory>}></Route>
+        <Route path='inventory' element={
+          <RequiredAuth>
+            <Inventory></Inventory>
+          </RequiredAuth>
+        }></Route>
         <Route path='about' element={<About></About>}></Route>
         <Route path='login' element={<Login></Login>}></Route>
         <Route path='signup' element={<Signup></Signup>}></Route>
