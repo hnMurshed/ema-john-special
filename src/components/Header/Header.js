@@ -4,6 +4,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 import logo from '../../images/Logo.svg';
+import CustomLink from '../CustomLink/CustomLink';
 import './Header.css';
 
 const Header = () => {
@@ -17,10 +18,10 @@ const Header = () => {
                     <img src={logo} alt="" />
                 </Link>
                 <nav>
-                    <Link to='/home'>Home</Link>
-                    <Link to='/order'>Order</Link>
-                    <Link to='/inventory'>Inventory</Link>
-                    <Link to='/about'>About</Link>
+                    <CustomLink to='/'>Home</CustomLink>
+                    <CustomLink to='/order'>Order</CustomLink>
+                    <CustomLink to='/inventory'>Inventory</CustomLink>
+                    <CustomLink to='/about'>About</CustomLink>
                 </nav>
                 <div>
                     {
