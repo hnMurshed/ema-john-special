@@ -1,22 +1,48 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { Link, useNavigate } from 'react-router-dom';
+import auth from '../../firebase.init';
 import googleLogo from '../../images/google.png';
 import './Login.css';
 
 const Login = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
+
+    const navigate = useNavigate();
+
+    const handleEmailBlur = e => {
+        setEmail(e.target.value)
+    }
+    const handlePasswordBlur = e => {
+        setPassword(e.target.value)
+    }
+
+    if (user) {
+        navigate('/home');
+    }
+
+    const handleUserLogin = e => {
+        e.preventDefault();
+        signInWithEmailAndPassword(email, password);
+    }
+
     return (
         <div className='flex justify-center'>
             <div className='form-container w-[500px] p-8 my-12'>
                 <h3 className='text-[35px] text-[#2A414F] text-center mb-[30px]'>Please Login!!</h3>
-                <form>
+                <form onSubmit={handleUserLogin}>
                     <div className="input-group">
                         <label className='block pl-2' htmlFor="email">Email</label>
-                        <input className='w-full p-2' type="email" name="email" id="email" placeholder='Your Email' />
+                        <input onBlur={handleEmailBlur} className='w-full p-2' type="email" name="email" id="email" placeholder='Your Email' required/>
                     </div>
                     <div className="input-group mt-[20px]">
                         <label className='block pl-2' htmlFor="password">Password</label>
-                        <input className='w-full p-2' type="password" name="password" id="password" placeholder='Your password' />
+                        <input onBlur={handlePasswordBlur} className='w-full p-2' type="password" name="password" id="password" placeholder='Your password' required />
                     </div>
+                    <p>{error && error.message}</p>
                     <input className='input-submit w-full mt-[44px]' type="submit" value="Login" />
                     <p className='text-center text-[15px] text-[#2A414F]'>New to Ema-John? <Link to='/signup' className='form-link'>Create New Account</Link></p>
                 </form>

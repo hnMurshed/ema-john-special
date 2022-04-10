@@ -20,6 +20,7 @@
     line-height: 25px;
     letter-spacing: 0.0015em;
     color: #0E161A;
+    cursor: pointer;
     box-sizing: border-box;
     border-radius: 5px;
     transition: 0.3s;
