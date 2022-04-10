@@ -5,18 +5,21 @@ import './Header.css';
 
 const Header = () => {
     return (
-        <div className="nav-container flex justify-center z-10">
-            <nav className="container">
+        <div className="nav-container z-10">
+            <div className="container mx-auto flex items-center justify-between">
                 <Link to="/home">
                     <img src={logo} alt="" />
                 </Link>
-                <div>
-                    <Link to='/home'>Home</Link>
-                    <Link to='/order'>Order</Link>
-                    <Link to='/inventory'>Inventory</Link>
-                    <Link to='/about'>About</Link>
-                </div>
-            </nav>
+                    <nav>
+                        <Link to='/home'>Home</Link>
+                        <Link to='/order'>Order</Link>
+                        <Link to='/inventory'>Inventory</Link>
+                        <Link to='/about'>About</Link>
+                    </nav>
+                    <div>
+                        <Link className='bg-white py-2 px-4 rounded-md' to='/login'>Login</Link>
+                    </div>
+            </div>
         </div>
     );
 };

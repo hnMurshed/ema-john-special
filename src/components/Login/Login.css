@@ -1,0 +1,55 @@
+.form-container {
+    border: 1px solid #95A0A7;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+.input-group input {
+    height: 55px;
+    font-size: 24px;
+    border: 1px solid #95A0A7;
+    margin-top: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.input-submit {
+    background-color: rgba(255, 153, 0, 0.3);
+    height: 55px;
+    font-size: 21px;
+    line-height: 25px;
+    letter-spacing: 0.0015em;
+    color: #0E161A;
+    box-sizing: border-box;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.input-submit:hover {
+    background-color: rgba(255, 153, 0, 0.6);
+}
+
+.form-link {
+    color: #FF9900;
+}
+
+.divider .line {
+    width: 145px;
+    height: 0;
+    border: 1px solid #95A0A7;
+}
+
+.google-btn {
+    height: 55px;
+    font-size: 17px;
+    line-height: 20px;
+    letter-spacing: 0.005em;
+    color: #2A414F;
+    box-sizing: border-box;
+    border: 1px solid #95A0A7;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+.google-btn:hover {
+    background-color: rgba(255, 153, 0, 0.6);
+}
