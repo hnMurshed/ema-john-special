@@ -37,7 +37,7 @@ const Order = () => {
                         cards={cards}
                         clearCard={clearCard}
                     >
-                        <Link to='/inventory'>
+                        <Link to='/shipment'>
                             <button className='flex justify-center items-center gap-2 w-full bg-[#FF9900] py-3 rounded-lg hover:bg-orange-600 hover:text-white duration-300'>
                                 <span>Proceed Checkout</span>
                                 <CreditCardIcon className='w-5 h-5'></CreditCardIcon>

@@ -9,6 +9,9 @@
 * 8. useCreateUserWithEmailAndPassword from react-firebase-hooks
 * 9. If user is created redirect to the expected page
 * 10. useSignInWithEmailAndPassword for login
+* 11. implement signOut(auth) on Sigh Out button to sign out
+* 12. create RequiredAuth component > inside it check if user exists and track user's location
+* 13. in route, Wrap the component you want to protect with RequiredAuth component
 */
 
 
@@ -17,5 +20,6 @@
 * 1. npm install -g firebase-tools
 * 2. firebase login
 * 3. firebase init
-* 4. firebase deploy
+* 4. npm run build
+* 5. firebase deploy
 */
